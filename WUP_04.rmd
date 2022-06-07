@@ -50,6 +50,12 @@ If we were to move the like high school box it would not hit the graduate box, w
 
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
 
+```{r}
+favstats(WORDSUM~DEGREE,data=GSScsv)
+```
+
+The mean for the students that have graduated from like high school is 1.5 less than those who have graduated high school. The Q1 of graduate students is 10, whereas those who have only graduated high school is only 7. So there is a very good difference of tests scores based on who graduated where. 
+
 ## Inferential Results
 
 <!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
