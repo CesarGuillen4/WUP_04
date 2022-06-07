@@ -60,6 +60,22 @@ The mean for the students that have graduated from like high school is 1.5 less 
 
 <!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
 
+```{r}
+model1 <- aov(WORDSUM~DEGREE,data=GSScsv)
+summary.aov(model1)
+```
+
+The chances of getting the results such as what we are given is that there is no difference between the subgroups is 2.36 out of 10,000. This leads people to believe that there is a difference between the the scores of the subgroups. 
+
+Since we have the P value, we want to see the differences from others. This will help clear up any confusions. 
+
+```{r}
+#we specify the margins starting at the bottom and proceeding clockwise - thus 8.7 is the left side margin to hold the names of the factors
+par(mar = c(3, 16.7, 2, 2))
+plot(TukeyHSD(model1),las=2)
+```
+
+Any confidence interval that does not cross over or reach 0 are different. LT high school compared to Graduate shown to be different because it does not reach the 0 mark. 
 
 # Discussion and Conclusion
 
